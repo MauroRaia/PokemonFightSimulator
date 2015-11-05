@@ -1,0 +1,22 @@
+{ "nombre" : "Grovyle", "type" : "Grass", "stats" :
+  [
+    {
+    "Hp" : 50,
+    "Attack" : 65,
+    "Defense" : 45,
+    "Sp.Atk" : 85,
+    "Sp.Def" : 65,
+    "Speed" : 95
+    }
+  ],
+  "Attacks": ["LeafBlade"]
+}
+var ataques;
+$.getJSON("Attacks.json", function(ataquesfn) {
+
+
+
+
+});
+
+ataques["LeafBlade"]

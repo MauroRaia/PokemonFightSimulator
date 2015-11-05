@@ -1,0 +1,4 @@
+{
+  "WingAttack": {"ID": 1, "nombre":"Wing Attack", "Dmg":60, "PP":35},
+  "LeafBlade": {"ID":2, "nombre":"Leaf Blade", "Dmg":90, "PP":15}
+}
