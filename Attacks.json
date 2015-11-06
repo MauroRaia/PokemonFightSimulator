@@ -1,4 +1,7 @@
 {
-  "WingAttack": {"ID": 1, "nombre":"Wing Attack", "Dmg":60, "PP":35},
-  "LeafBlade": {"ID":2, "nombre":"Leaf Blade", "Dmg":90, "PP":15}
+  "WingAttack": {"ID": 1, "nombre":"Wing Attack", "Dmg":60, "PP":35, "Type":"Flying"},
+  "LeafBlade": {"ID":2, "nombre":"Leaf Blade", "Dmg":90, "PP":15, "Type":"Grass"},
+  "QuickAttack": {"ID":3, "nombre":"Quick Attack", "Dmg":40, "PP":30, "Type":"Normal"},
+  "Pursuit": {"ID":4, "nombre":"Pursuit", "Dmg":40, "PP":20, "Type":"Dark"},
+  "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Type":"Flying"}
 }
