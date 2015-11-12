@@ -1,7 +1,9 @@
 {
-  "WingAttack": {"ID": 1, "nombre":"Wing Attack", "Dmg":60, "PP":35, "Type":"Flying"},
-  "LeafBlade": {"ID":2, "nombre":"Leaf Blade", "Dmg":90, "PP":15, "Type":"Grass"},
-  "QuickAttack": {"ID":3, "nombre":"Quick Attack", "Dmg":40, "PP":30, "Type":"Normal"},
-  "Pursuit": {"ID":4, "nombre":"Pursuit", "Dmg":40, "PP":20, "Type":"Dark"},
-  "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Type":"Flying"}
+  "WingAttack": {"ID": 1, "nombre":"Wing Attack", "Dmg":60, "PP":35, "Type":"Flying", "Category":"Physical"},
+  "LeafBlade": {"ID":2, "nombre":"Leaf Blade", "Dmg":90, "PP":15, "Type":"Grass", "Category":"Physical"},
+  "QuickAttack": {"ID":3, "nombre":"Quick Attack", "Dmg":40, "PP":30, "Type":"Normal", "Category":"Physical"},
+  "Pursuit": {"ID":4, "nombre":"Pursuit", "Dmg":40, "PP":20, "Type":"Dark", "Category":"Special"},
+  "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Type":"Flying", "Category":"Physical"},
+  "ThunderShock": {"ID":6, "nombre": "Thunder Shock", "Dmg":40, "PP": 40, "Type": "Electric", "Category":"Physical"},
+  "Thunder": {"ID":7, "nombre": "Thunder", "Dmg":110, "PP": 15, "Type": "Electric", "Category": "Special"}
 }

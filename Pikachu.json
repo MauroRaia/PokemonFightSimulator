@@ -1,0 +1,14 @@
+{
+    "nombre": "Pikachu",
+    "type" : "Electric",
+    "Lvl": 1,
+    "stats" :
+    { "Hp": 35,
+      "Attack": 55,
+      "Defense": 40,
+      "SpAtk": 50,
+      "SpDef": 50,
+      "Speed": 90
+    },
+    "Attacks": ["ThunderShock", "Thunder", "QuickAttack"]
+}
