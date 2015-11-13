@@ -32,37 +32,33 @@ $(document).ready(function() {
 //var pokemonA = loadJSON("Pidgeot.json");
   //var pokemonB = loadJSON("Scyther.json");
 
-var attacker = loadJSON("Pikachu.json")
-var defender = loadJSON("Pidgeot.json")
-var attacks  = loadJSON("Attacks.json")
-var types = loadJSON("Types.json")
-var selectedAttack = attacker.Attacks[0]
-var selectedAttackOpp = defender.Attacks[0]
-var a = attacks[selectedAttack]
+  var pokemonPlayer;
+  var pokemonOpp;
+  var attacks  = loadJSON("Attacks.json")
+  var types = loadJSON("Types.json")
+  var selectedAttack;
+  var selectedAttackOpp;
 
 //HTML values
-   $(".vida").html(attacker.stats.Hp);
-   $(".vidaopp").html(defender.stats.Hp);
-   $(".ataque0").html(attacker.Attacks[0]);
-   $(".ataque1").html(attacker.Attacks[1]);
-   $(".ataque2").html(attacker.Attacks[2]);
-   $(".ataque3").html(attacker.Attacks[3]);
-   $(".ataqueopp0").html(defender.Attacks[0]);
-   $(".ataqueopp1").html(defender.Attacks[1]);
-   $(".ataqueopp2").html(defender.Attacks[2]);
-   $(".ataqueopp3").html(defender.Attacks[3]);
-   $(".miPokemon").html(attacker.nombre);
-   $(".oppPokemon").html(defender.nombre);
+  //  $(".vida").html(attacker.stats.Hp);
+  //  $(".vidaopp").html(defender.stats.Hp);
+  //  $(".ataque0").html(attacker.Attacks[0]);
+  //  $(".ataque1").html(attacker.Attacks[1]);
+  //  $(".ataque2").html(attacker.Attacks[2]);
+  //  $(".ataque3").html(attacker.Attacks[3]);
+  //  $(".ataqueopp0").html(defender.Attacks[0]);
+  //  $(".ataqueopp1").html(defender.Attacks[1]);
+  //  $(".ataqueopp2").html(defender.Attacks[2]);
+  //  $(".ataqueopp3").html(defender.Attacks[3]);
+  //  $(".miPokemon").html(attacker.nombre);
+  //  $(".oppPokemon").html(defender.nombre);
 
-  function modifier(){
-    //a = Pokemon attack
-    //b = Pokemon defending
-    //var a = ataques[pokemonA.Attacks[0]];
+  function modifier(attack){
 
-    if (_.contains(types[defender.type].WeakAgainst, a.Type)){
+    if (_.contains(types[defender.type].WeakAgainst, attack.Type)){
       var result = 2;
     }
-      else if (_.contains(types[defender.type].StrongAgainst, a.Type)) {
+      else if (_.contains(types[defender.type].StrongAgainst, attack.Type)) {
         var result = 0.5;
       }
       else {
@@ -72,7 +68,7 @@ var a = attacks[selectedAttack]
   }
 
   function hit(attack, attacker, defender){
-    var mod = modifier();
+    var mod = modifier(attack);
 
     if (attacks[attack.Category == "Physical"]){
       var dmgPokemon = calcDmg(attacker.Lvl, attacker.stats.Attack, defender.stats.Defense, attacks[attack].Dmg, mod);
@@ -89,11 +85,10 @@ var a = attacks[selectedAttack]
   function calcDmg(lvl, statAt, statDf, dmg, mod){
     return ((2 * lvl+ 10) / 250) * (statAt / statDf) * (dmg + 2) * mod;
   }
-var pokemonPlayer = attacker;
-var pokemonOpp = defender;
+
 
 function actAttacks(miPokemon, oppPokemon){
-  for(var i=0; i<3; i++){
+  for(var i=0; i<4; i++){
     if (miPokemon.Attacks[i] == undefined){
       $(".ataque" + i).html("-");
     }
@@ -102,7 +97,7 @@ function actAttacks(miPokemon, oppPokemon){
     }
   }
 
-  for(var i=0; i<3; i++){
+  for(var i=0; i<4; i++){
     if (oppPokemon.Attacks[i] == undefined){
       $(".ataqueopp" + i).html("-");
     }
@@ -112,19 +107,19 @@ function actAttacks(miPokemon, oppPokemon){
   }
 }
 
+
   $(document).keypress(function(e){
-    console.log(e)
     if(e.which == 13) {
       hit(selectedAttack, pokemonPlayer, pokemonOpp);
       hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
-      $(".vida").html(attacker.stats.Hp);
-      $(".vidaopp").html(defender.stats.Hp);
+      $(".vida").html(pokemonPlayer.stats.Hp);
+      $(".vidaopp").html(pokemonOpp.stats.Hp);
       $(".selectedAttack").html(selectedAttack);
-      $("selectedAttackOpp").html(selectedAttackOpp);
+      $(".selectedAttackOpp").html(selectedAttackOpp);
       console.log("my life:");
-      console.log(attacker.stats.Hp);
+      console.log(pokemonPlayer.stats.Hp);
       console.log("opp life:");
-      console.log(defender.stats.Hp);
+      console.log(pokemonOpp.stats.Hp);
     }
     if(e.which == 113) {
       selectedAttack = pokemonPlayer.Attacks[0];
