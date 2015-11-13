@@ -3,8 +3,8 @@
     "Hp" : 83,
     "Attack" : 80,
     "Defense" : 75,
-    "Sp.Atk" : 70,
-    "Sp.Def" : 70,
+    "SpAtk" : 70,
+    "SpDef" : 70,
     "Speed" : 91
     }
   ,

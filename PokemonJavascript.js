@@ -31,26 +31,28 @@ $( document ).ready(function() {
   //var ataques = loadJSON("Attacks.json");
 //var pokemonA = loadJSON("Pidgeot.json");
   //var pokemonB = loadJSON("Scyther.json");
-//  $(".vida").html(pokemonB.stats.Hp);
 
-var attacker = loadJSON("Pickachu.json")
+var attacker = loadJSON("Pikachu.json")
 var defender = loadJSON("Pidgeot.json")
 var attacks  = loadJSON("Attacks.json")
 var types = loadJSON("Types.json")
-var selectionedAttack = attacker.attacks[0]
-var selectionedAttackOpp = defender.attacks[0]
-var a = attacks[selectionedAttack]
+var selectedAttack = attacker.Attacks[0]
+var selectedAttackOpp = defender.Attacks[0]
+var a = attacks[selectedAttack]
 
+//HTML values
+  $(".vida").html(attacker.stats.Hp);
+  $(".vidaopp").html(defender.stats.Hp);
 
   function modifier(){
     //a = Pokemon attack
     //b = Pokemon defending
     //var a = ataques[pokemonA.Attacks[0]];
 
-    if (_.contains(Types[Defender.type].WeakAgainst, a.Type)){
+    if (_.contains(types[defender.type].WeakAgainst, a.Type)){
       var result = 2;
     }
-      else if (_.contains(Types[Defender.type].StrongAgainst, a.Type)) {
+      else if (_.contains(types[defender.type].StrongAgainst, a.Type)) {
         var result = 0.5;
       }
       else {
@@ -59,70 +61,77 @@ var a = attacks[selectionedAttack]
     return result
   }
 
-  console.log(modifier());
+  function hit(attack, attacker, defender){
+    var mod = modifier();
 
-  function hit(selectionedAttack, attacker, defender){
-    if (attacks[selectionedAttack.Category == "Physical"]){
-      var dmgPokemon = ((2 * attacker.Lvl + 10) / 250) * (attacker.stats.Attack / defender.stats.Defense) * (attacks[selectionedAttack].Dmg + 2) * modifier();
+    if (attacks[attack.Category == "Physical"]){
+      var dmgPokemon = calcDmg(attacker.Lvl, attacker.stats.Attack, defender.stats.Defense, attacks[attack].Dmg, mod);
       defender.stats.Hp = Math.round(defender.stats.Hp - dmgPokemon);
       return defender.stats.Hp;
       }
     else {
-      var dmgPokemon = ((((2 * attacker.Lvl + 10) / 250) * (attacker.stats.SpAtk / defender.stats.SpDef) * (attack[selectionedAttack.Dmg + 2)) * modifier());
+      var dmgPokemon = calcDmg(attacker.Lvl, attacker.stats.SpAtk, defender.stats.SpDef, attacks[attack].Dmg, mod);
       defender.stats.Hp = Math.round(defender.stats.Hp - dmgPokemon);
       return defender.stats.Hp;
     }
   }
 
+  function calcDmg(lvl, statAt, statDf, dmg, mod){
+    return ((2 * lvl+ 10) / 250) * (statAt / statDf) * (dmg + 2) * mod;
+  }
 var pokemonPlayer = attacker;
 var pokemonOpp = defender;
 
   $(document).keypress(function(e){
     if(e.which == 13) {
-      hit(selectionedAttack, pokemonPlayer, pokemonDefender);
-      hit(selectionedAttackOpp, pokemonOpp, pokemonPlayer)
+      hit(selectedAttack, pokemonPlayer, pokemonOpp);
+      hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
+      console.log("my life:")
+      console.log(attacker.stats.Hp)
+      console.log("opp life:")
+      console.log(defender.stats.Hp)
     }
     if(e.which == 49) {
-      selectionedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0]
     }
     if(e.which == 50) {
-      selectionedAttack = pokemonPlayer.Attacks[1]
+      selectedAttack = pokemonPlayer.Attacks[1]
     }
     if(e.which == 51) {
-      selectionedAttack = pokemonPlayer.Attacks[2]
+      selectedAttack = pokemonPlayer.Attacks[2]
     }
     if(e.which == 55) {
-      selectionedAttackOpp = pokemonOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0]
     }
     if(e.which == 56) {
-      selectionedAttackOpp = pokemonOpp.Attacks[1]
+      selectedAttackOpp = pokemonOpp.Attacks[1]
     }
     if(e.which == 57) {
-      selectionedAttackOpp = pokemonOpp.Attacks[2]
+      selectedAttackOpp = pokemonOpp.Attacks[2]
     }
     if(e.which == 97) {
       pokemonPlayer = loadJSON("Pidgeot.json");
-      selectionedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0]
     }
     if(e.which == 98) {
       pokemonPlayer = loadJSON("Scyther.json");
-      selectionedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0]
     }
     if(e.which == 99) {
       pokemonPlayer = loadJSON("Pikachu.json");
-      selectionedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0]
       }
     if(e.which == 103) {
       pokemonOpp = loadJSON("Pidgeot.json");
-      selectionedAttackOpp = pokemonOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0]
     }
     if(e.which == 104) {
       pokemonOpp = loadJSON("Scyther.json");
-      selectionedAttackOpp = pokemongOpp.Attacks[0]
+      selectedAttackOpp = pokemongOpp.Attacks[0]
     }
     if(e.which == 105) {
       pokemonOpp = loadJSON("Pikachu.json");
-      selectionedAttackOpp = pokemonOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0]
     }
   })
 

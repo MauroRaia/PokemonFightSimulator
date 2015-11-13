@@ -1,0 +1,11 @@
+{ "nombre" : "Ivysaur", "Lvl" : 1, "types" : "Grass", "stats" :
+    {
+    "Hp" : 60,
+    "Attack" : 62,
+    "Defense" : 63,
+    "SpAtk" : 80,
+    "SpDef" : 80,
+    "Speed" : 65
+    },
+  "Attacks": ["LeafBlade", "WingAttack"]
+}

@@ -3,7 +3,7 @@
     "type" : "Electric",
     "Lvl": 1,
     "stats" :
-    { "Hp": 35,
+    { "Hp": 100,
       "Attack": 55,
       "Defense": 40,
       "SpAtk": 50,
