@@ -1,0 +1,12 @@
+{ "nombre" : "Pidgeot", "type" : "Flying", "Lvl":1, "stats" :
+    {
+    "Hp" : 83,
+    "Attack" : 80,
+    "Defense" : 75,
+    "Sp.Atk" : 70,
+    "Sp.Def" : 70,
+    "Speed" : 91
+    }
+  ,
+  "Attacks": ["WingAttack", "Hurricane", "Quick Attack" ]
+}

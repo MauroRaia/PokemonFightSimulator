@@ -1,9 +1,9 @@
 {
   "Grass" : {"nombre":"Grass", "WeakAgainst":["Bug", "Fire", "Flying"], "StrongAgainst":["Water", "Rock"]},
   "Bug" : {"nombre":"Bug", "WeakAgainst":["Flying", "Rock", "Fire"], "StrongAgainst":[]},
-  "Flying" : {"nombre":"Flying", "WeakAgainst":["Rock", "Steel"], "StrongAgainst":["Bug", "Grass", "Fighting"]}
-
-
-
+  "Flying" : {"nombre":"Flying", "WeakAgainst":["Rock", "Steel"], "StrongAgainst":["Bug", "Grass", "Fighting"]},
+  "Dark" : {"nombre":"Dark", "WeakAgainst":["Fighting", "Bug"], "StrongAgainst":[""]},
+  "Normal": {"nombre": "Normal", "WeakAgainst":[""], "StrongAgainst":[""]},
+  "Electric": {"nombre": "Electric", "WeakAgainst":["Ground"], "StrongAgainst":["Flying", "Electric"]}
 
 }
