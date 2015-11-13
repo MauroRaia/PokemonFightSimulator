@@ -26,7 +26,7 @@ function loadTextFileAjaxSync(filePath, mimeType)
     return null;
   }
 }
-$( document ).ready(function() {
+$(document).ready(function() {
 
   //var ataques = loadJSON("Attacks.json");
 //var pokemonA = loadJSON("Pidgeot.json");
@@ -41,8 +41,18 @@ var selectedAttackOpp = defender.Attacks[0]
 var a = attacks[selectedAttack]
 
 //HTML values
-  $(".vida").html(attacker.stats.Hp);
-  $(".vidaopp").html(defender.stats.Hp);
+   $(".vida").html(attacker.stats.Hp);
+   $(".vidaopp").html(defender.stats.Hp);
+   $(".ataque0").html(attacker.Attacks[0]);
+   $(".ataque1").html(attacker.Attacks[1]);
+   $(".ataque2").html(attacker.Attacks[2]);
+   $(".ataque3").html(attacker.Attacks[3]);
+   $(".ataqueopp0").html(defender.Attacks[0]);
+   $(".ataqueopp1").html(defender.Attacks[1]);
+   $(".ataqueopp2").html(defender.Attacks[2]);
+   $(".ataqueopp3").html(defender.Attacks[3]);
+   $(".miPokemon").html(attacker.nombre);
+   $(".oppPokemon").html(defender.nombre);
 
   function modifier(){
     //a = Pokemon attack
@@ -82,56 +92,98 @@ var a = attacks[selectedAttack]
 var pokemonPlayer = attacker;
 var pokemonOpp = defender;
 
+function actAttacks(miPokemon, oppPokemon){
+  $(".ataque0").html(miPokemon.Attacks[0]);
+  $(".ataque1").html(miPokemon.Attacks[1]);
+  $(".ataque2").html(miPokemon.Attacks[2]);
+  $(".ataque3").html(miPokemon.Attacks[3]);
+  $(".ataqueopp0").html(oppPokemon.Attacks[0]);
+  $(".ataqueopp1").html(oppPokemon.Attacks[1]);
+  $(".ataqueopp2").html(oppPokemon.Attacks[2]);
+  $(".ataqueopp3").html(oppPokemon.Attacks[3]);
+}
+
   $(document).keypress(function(e){
+    console.log(e)
     if(e.which == 13) {
       hit(selectedAttack, pokemonPlayer, pokemonOpp);
       hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
-      console.log("my life:")
-      console.log(attacker.stats.Hp)
-      console.log("opp life:")
-      console.log(defender.stats.Hp)
+      $(".vida").html(attacker.stats.Hp);
+      $(".vidaopp").html(defender.stats.Hp);
+      $(".selectedAttack").html(selectedAttack);
+      $("selectedAttackOpp").html(selectedAttackOpp);
+      console.log("my life:");
+      console.log(attacker.stats.Hp);
+      console.log("opp life:");
+      console.log(defender.stats.Hp);
     }
-    if(e.which == 49) {
-      selectedAttack = pokemonPlayer.Attacks[0]
+    if(e.which == 113) {
+      selectedAttack = pokemonPlayer.Attacks[0];
+      $(".selectedAttack").html(selectedAttack);
     }
-    if(e.which == 50) {
-      selectedAttack = pokemonPlayer.Attacks[1]
+    if(e.which == 119) {
+      selectedAttack = pokemonPlayer.Attacks[1];
+      $(".selectedAttack").html(selectedAttack);
     }
-    if(e.which == 51) {
-      selectedAttack = pokemonPlayer.Attacks[2]
+    if(e.which == 101) {
+      selectedAttack = pokemonPlayer.Attacks[2];
+      $(".selectedAttack").html(selectedAttack);
     }
-    if(e.which == 55) {
-      selectedAttackOpp = pokemonOpp.Attacks[0]
-    }
-    if(e.which == 56) {
-      selectedAttackOpp = pokemonOpp.Attacks[1]
-    }
-    if(e.which == 57) {
-      selectedAttackOpp = pokemonOpp.Attacks[2]
+    if(e.which == 114) {
+      selectedAttack = pokemonPlayer.Attacks[3];
+      $(".selectedAttack").html(selectedAttack);
     }
     if(e.which == 97) {
+      selectedAttackOpp = pokemonOpp.Attacks[0];
+      $(".selectedAttackOpp").html(selectedAttackOpp);
+    }
+    if(e.which == 115) {
+      selectedAttackOpp = pokemonOpp.Attacks[1];
+      $(".selectedAttackOpp").html(selectedAttackOpp);
+    }
+    if(e.which == 100) {
+      selectedAttackOpp = pokemonOpp.Attacks[2];
+      $(".selectedAttackOpp").html(selectedAttackOpp);
+    }
+    if(e.which == 102) {
+      selectedAttackOpp = pokemonOpp.Attacks[3];
+      $(".selectedAttackOpp").html(selectedAttackOpp);
+    }
+    if(e.which == 49) {
       pokemonPlayer = loadJSON("Pidgeot.json");
-      selectedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0];
+      $(".miPokemon").html(pokemonPlayer.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
     }
-    if(e.which == 98) {
+    if(e.which == 50) {
       pokemonPlayer = loadJSON("Scyther.json");
-      selectedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0];
+      $(".miPokemon").html(pokemonPlayer.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
     }
-    if(e.which == 99) {
+    if(e.which == 51) {
       pokemonPlayer = loadJSON("Pikachu.json");
-      selectedAttack = pokemonPlayer.Attacks[0]
+      selectedAttack = pokemonPlayer.Attacks[0];
+      $(".miPokemon").html(pokemonPlayer.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
       }
-    if(e.which == 103) {
+    if(e.which == 52) {
       pokemonOpp = loadJSON("Pidgeot.json");
-      selectedAttackOpp = pokemonOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0];
+      $(".oppPokemon").html(pokemonOpp.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
     }
-    if(e.which == 104) {
+    if(e.which == 53) {
       pokemonOpp = loadJSON("Scyther.json");
-      selectedAttackOpp = pokemongOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0];
+      $(".oppPokemon").html(pokemonOpp.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
     }
-    if(e.which == 105) {
+    if(e.which == 54) {
       pokemonOpp = loadJSON("Pikachu.json");
-      selectedAttackOpp = pokemonOpp.Attacks[0]
+      selectedAttackOpp = pokemonOpp.Attacks[0];
+      $(".oppPokemon").html(pokemonOpp.nombre);
+      actAttacks(pokemonPlayer, pokemonOpp);
     }
   })
 
