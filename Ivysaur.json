@@ -7,5 +7,5 @@
     "SpDef" : 80,
     "Speed" : 65
     },
-  "Attacks": ["LeafBlade", "WingAttack"]
+  "Attacks": ["LeafBlade", "PoisonPowder", "SleepPowder", "SolarBeam"]
 }

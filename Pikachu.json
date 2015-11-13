@@ -10,5 +10,5 @@
       "SpDef": 50,
       "Speed": 90
     },
-    "Attacks": ["ThunderShock", "Thunder", "QuickAttack"]
+    "Attacks": ["ThunderShock", "Thunder", "QuickAttack", "ThunderWave"]
 }

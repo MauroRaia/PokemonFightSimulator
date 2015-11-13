@@ -93,14 +93,23 @@ var pokemonPlayer = attacker;
 var pokemonOpp = defender;
 
 function actAttacks(miPokemon, oppPokemon){
-  $(".ataque0").html(miPokemon.Attacks[0]);
-  $(".ataque1").html(miPokemon.Attacks[1]);
-  $(".ataque2").html(miPokemon.Attacks[2]);
-  $(".ataque3").html(miPokemon.Attacks[3]);
-  $(".ataqueopp0").html(oppPokemon.Attacks[0]);
-  $(".ataqueopp1").html(oppPokemon.Attacks[1]);
-  $(".ataqueopp2").html(oppPokemon.Attacks[2]);
-  $(".ataqueopp3").html(oppPokemon.Attacks[3]);
+  for(var i=0; i<3; i++){
+    if (miPokemon.Attacks[i] == undefined){
+      $(".ataque" + i).html("-");
+    }
+    else{
+      $(".ataque" + i).html(pokemonPlayer.Attacks[i]);
+    }
+  }
+
+  for(var i=0; i<3; i++){
+    if (oppPokemon.Attacks[i] == undefined){
+      $(".ataqueopp" + i).html("-");
+    }
+    else{
+      $(".ataqueopp" + i).html(oppPokemon.Attacks[i]);
+    }
+  }
 }
 
   $(document).keypress(function(e){

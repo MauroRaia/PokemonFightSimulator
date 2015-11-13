@@ -1,5 +1,5 @@
 {
-  "nombre":"scyther",
+  "nombre":"Scyther",
   "type":["Bug", "Flying"],
   "Lvl":1,
   "stats":
@@ -9,5 +9,5 @@
       "Sp.Atk":55,
       "Sp.Def":80,
       "Speed":105},
-  "Attacks":["WingAttack", "Pursuit", "QuickAttack"]
+  "Attacks":["WingAttack", "Pursuit", "NightSlash", "QuickAttack"]
 }

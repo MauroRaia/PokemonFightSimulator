@@ -8,5 +8,5 @@
     "Speed" : 91
     }
   ,
-  "Attacks": ["WingAttack", "Hurricane", "QuickAttack" ]
+  "Attacks": ["WingAttack", "Hurricane", "QuickAttack", "SandAttack"]
 }

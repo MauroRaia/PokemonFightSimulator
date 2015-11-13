@@ -4,6 +4,11 @@
   "QuickAttack": {"ID":3, "nombre":"Quick Attack", "Dmg":40, "PP":30, "Type":"Normal", "Category":"Physical"},
   "Pursuit": {"ID":4, "nombre":"Pursuit", "Dmg":40, "PP":20, "Type":"Dark", "Category":"Special"},
   "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Type":"Flying", "Category":"Physical"},
-  "ThunderShock": {"ID":6, "nombre": "Thunder Shock", "Dmg":40, "PP": 40, "Type": "Electric", "Category":"Special"},
-  "Thunder": {"ID":7, "nombre": "Thunder", "Dmg":110, "PP": 15, "Type": "Electric", "Category": "Special"}
+  "ThunderShock": {"ID":6, "nombre": "Thunder Shock", "Dmg":40, "PP": 40, "Type": "Electric", "Category":["Special", "Status"]},
+  "Thunder": {"ID":7, "nombre": "Thunder", "Dmg":110, "PP": 15, "Type": "Electric", "Category": ["Special", "Status"]},
+  "NightSlash": {"ID":8, "nombre": "Night Slash", "Dmg":70, "PP": 15, "Type": "Dark", "Category": "Physical"},
+  "ThunderWave": {"ID":9, "nombre": "Thunder Wave", "Dmg":0, "PP":20, "Type": "Electric", "Category": "Status"},
+  "SandAttack": {"ID":10, "nombre": "Sand-Attack", "Dmg":0, "PP":15, "Type": "Ground", "Category": "Status"},
+  "PoisonPowder": {"ID":11, "nombre": "Poison Powder", "Dmg":0, "PP":35, "Type": "Poison", "Category": "Status"},
+  "SleepPowder": {"ID":12, "nombre": "Sleep Powder", "Dmg":0, "PP":15, "Type": "Grass", "Category": "Status"}
 }
