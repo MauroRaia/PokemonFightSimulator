@@ -1,0 +1,19 @@
+
+
+#body { 
+   width:90%;
+   margin:auto;
+   min-width:600px;
+   max-width:2000px;
+}
+				
+.imagenes {
+    width: 100px;
+    height: 120px;
+}
+
+.imagenes img {
+    width: 100%;
+    height: auto;
+}
+
