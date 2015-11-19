@@ -1,3 +1,4 @@
+
 // Load JSON text from server hosted file and return JSON parsed object
 function loadJSON(filePath) {
   // Load json file;
@@ -26,19 +27,42 @@ function loadTextFileAjaxSync(filePath, mimeType)
     return null;
   }
 }
-$(document).ready(function() {
 
+var paralyze = function(){
+      if (Math.random() >= 0.25){
+        return true
+    }
+      else{
+        return false
+      }
+}
+
+var sleep = function(){
+  var random = Math.floor((Math.random() * 7) + 1);
+  var i = 0
+      while (random >= i){
+        i += 1
+        return true
+      }
+}
+
+var pokemonPlayer;
+var pokemonOpp;
+var Attacks;
+var types;
+var selectedAttack;
+var selectedAttackOpp;
+var fightdata;
+$(document).ready(function() {
+  Attacks  = loadJSON("Attacks.json")
+  types = loadJSON("Types.json")
   //var ataques = loadJSON("Attacks.json");
 //var pokemonA = loadJSON("Pidgeot.json");
   //var pokemonB = loadJSON("Scyther.json");
 
-  var pokemonPlayer;
-  var pokemonOpp;
-  var attacks  = loadJSON("Attacks.json")
-  var types = loadJSON("Types.json")
-  var selectedAttack;
-  var selectedAttackOpp;
 
+  //fightdata.round = 0;
+  // fightdata.statuses = {};
 //HTML values
   //  $(".vida").html(attacker.stats.Hp);
   //  $(".vidaopp").html(defender.stats.Hp);
@@ -53,12 +77,13 @@ $(document).ready(function() {
   //  $(".miPokemon").html(attacker.nombre);
   //  $(".oppPokemon").html(defender.nombre);
 
-  function modifier(attack){
 
-    if (_.contains(types[defender.type].WeakAgainst, attack.Type)){
+function modifier(attack, defender){
+
+    if (_.contains(types[defender.Type].WeakAgainst, attack.Type)){
       var result = 2;
     }
-      else if (_.contains(types[defender.type].StrongAgainst, attack.Type)) {
+      else if (_.contains(types[defender.Type].StrongAgainst, attack.Type)) {
         var result = 0.5;
       }
       else {
@@ -66,11 +91,31 @@ $(document).ready(function() {
       }
     return result
   }
+function calcAcc(attack, attacker, defender){
+  var p = ((attack.Accuracy * (attacker.stats.Accuracy / defender.stats.Evasion)) / 100)
+  console.log(attack);
+  console.log(attacker);
+  console.log(defender);
+  console.log(p);
+  console.log(attacker.stats.Accuracy);
+  console.log(defender.stats.Evasion);
+
+  var random = Math.random()
+  console.log(random);
+  if (random <= p){
+    return true
+  }
+  else {
+    return false
+  }
+}
 
   function hit(attack, attacker, defender){
-    var mod = modifier(attack);
+    var mod = modifier(attack, defender);
+    //var canAttack = pokemon.status();
+    if (calcAcc(attack, attacker, defender)){
 
-    if (attacks[attack.Category == "Physical"]){
+    if (Attacks[attack.Category == "Physical"]){
       var dmgPokemon = calcDmg(attacker.Lvl, attacker.stats.Attack, defender.stats.Defense, attacks[attack].Dmg, mod);
       defender.stats.Hp = Math.round(defender.stats.Hp - dmgPokemon);
       return defender.stats.Hp;
@@ -81,10 +126,16 @@ $(document).ready(function() {
       return defender.stats.Hp;
     }
   }
+  else{
+    console.log("Fallaste, sos dun")
+  }
+  }
 
   function calcDmg(lvl, statAt, statDf, dmg, mod){
     return ((2 * lvl+ 10) / 250) * (statAt / statDf) * (dmg + 2) * mod;
   }
+
+
 
 
 function actAttacks(miPokemon, oppPokemon){
@@ -110,6 +161,7 @@ function actAttacks(miPokemon, oppPokemon){
 
   $(document).keypress(function(e){
     if(e.which == 13) {
+    //  fightdata.round += 1;
       hit(selectedAttack, pokemonPlayer, pokemonOpp);
       hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
       $(".vida").html(pokemonPlayer.stats.Hp);

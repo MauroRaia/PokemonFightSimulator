@@ -1,6 +1,6 @@
 {
   "nombre":"Scyther",
-  "type":["Bug", "Flying"],
+  "Type":"Bug",
   "Lvl":1,
   "stats":
     { "Hp" : 70,
@@ -8,6 +8,9 @@
       "Defense":80,
       "Sp.Atk":55,
       "Sp.Def":80,
-      "Speed":105},
+      "Speed":105,
+      "Accuracy": 100,
+      "Evasion" : 100
+    },
   "Attacks":["WingAttack", "Pursuit", "NightSlash", "QuickAttack"]
 }
