@@ -4,14 +4,13 @@
     "Lvl": 1,
     "stats" :
     { "Hp": 100,
+      "HpMax" : 100,
       "Attack": 55,
       "Defense": 40,
       "SpAtk": 50,
       "SpDef": 50,
-      "Speed": 90,
       "Accuracy": 100,
       "Evasion" : 100,
-      "Status" : "none"
     },
     "Attacks": ["ThunderShock", "Thunder", "QuickAttack", "ThunderWave"]
 }

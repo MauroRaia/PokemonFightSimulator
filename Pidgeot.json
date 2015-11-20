@@ -1,6 +1,7 @@
 { "nombre" : "Pidgeot", "Type" : "Flying", "Lvl":1, "stats" :
     {
     "Hp" : 83,
+    "HpMax" : 83,
     "Attack" : 80,
     "Defense" : 75,
     "SpAtk" : 70,
@@ -8,7 +9,6 @@
     "Speed" : 91,
     "Accuracy": 100,
     "Evasion" : 100,
-    "Status" : "none"
     }
   ,
   "Attacks": ["WingAttack", "Hurricane", "QuickAttack", "SandAttack"]
