@@ -1,5 +1,4 @@
-var life = 0;
-var nombre = pikachu 
+var life = 100;
 
 function life_bar(){
     life = 100;
@@ -28,6 +27,4 @@ $('#damager').click(function() {
 })
 };
 
-
-
-
+life_bar();

@@ -1,6 +1,7 @@
 { "nombre" : "Pidgeot", "Type" : "Flying", "Lvl":1, "stats" :
     {
     "Hp" : 83,
+    "HpMax" : 83,
     "Attack" : 80,
     "Defense" : 75,
     "SpAtk" : 70,

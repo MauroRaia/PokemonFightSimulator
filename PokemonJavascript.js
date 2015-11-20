@@ -61,22 +61,8 @@ $(document).ready(function() {
   //var pokemonB = loadJSON("Scyther.json");
 
 
-  //fightdata.round = 0;
-  // fightdata.statuses = {};
-//HTML values
-  //  $(".vida").html(attacker.stats.Hp);
-  //  $(".vidaopp").html(defender.stats.Hp);
-  //  $(".ataque0").html(attacker.Attacks[0]);
-  //  $(".ataque1").html(attacker.Attacks[1]);
-  //  $(".ataque2").html(attacker.Attacks[2]);
-  //  $(".ataque3").html(attacker.Attacks[3]);
-  //  $(".ataqueopp0").html(defender.Attacks[0]);
-  //  $(".ataqueopp1").html(defender.Attacks[1]);
-  //  $(".ataqueopp2").html(defender.Attacks[2]);
-  //  $(".ataqueopp3").html(defender.Attacks[3]);
-  //  $(".miPokemon").html(attacker.nombre);
-  //  $(".oppPokemon").html(defender.nombre);
-
+//  var fightdata;
+// var fightdata.statuses = {};
 
 function modifier(attack, defender){
 
@@ -107,7 +93,7 @@ function calcAcc(attack, attacker, defender){
 
     if (calcAcc(attack, attacker, defender)){
 
-    if (Attacks[attack.Category == "Physical"]){
+    if (Attacks[attack].Category == "Physical"){
       var dmgPokemon = calcDmg(attacker.Lvl, attacker.stats.Attack, defender.stats.Defense, Attacks[attack].Dmg, mod);
       defender.stats.Hp = Math.round(defender.stats.Hp - dmgPokemon);
       return defender.stats.Hp;
@@ -143,17 +129,27 @@ function actAttacks(pokemon, who){
       $(variable + i).html("-");
     }
     else{
-      $(variable + i).html(pokemonPlayer.Attacks[i]);
+      $(variable + i).html(pokemon.Attacks[i]);
     }
   }
 }
 
+function lifebar(pokemonMaxLife, pokemonActLife){
+
+  var lifeInBar = Math.round((pokemonActLife * 100) / pokemonMaxLife)
+  return lifeInBar
+}
 
   $(document).keypress(function(e){
     if(e.which == 13) {
-    //  fightdata.round += 1;
+      //fightdata.round += 1;
       hit(selectedAttack, pokemonPlayer, pokemonOpp);
       hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
+      var lifebarPP = lifebar(pokemonPlayer.stats.HpMax, pokemonPlayer.stats.Hp)
+      var lifebarPO = lifebar(pokemonOpp.stats.HpMax, pokemonOpp.stats.Hp)
+      document.getElementById("health").value = lifebarPP.toString()
+      document.getElementById("healthopp").value = lifebarPO.toString()
+
       $(".vida").html(pokemonPlayer.stats.Hp);
       $(".vidaopp").html(pokemonOpp.stats.Hp);
       $(".selectedAttack").html(selectedAttack);
