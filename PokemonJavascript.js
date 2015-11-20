@@ -28,23 +28,6 @@ function loadTextFileAjaxSync(filePath, mimeType)
   }
 }
 
-var paralyze = function(){
-      if (Math.random() >= 0.25){
-        return true
-    }
-      else{
-        return false
-      }
-}
-
-var sleep = function(){
-  var random = Math.floor((Math.random() * 7) + 1);
-  var i = 0
-      while (random >= i){
-        i += 1
-        return true
-      }
-}
 
 var pokemonPlayer;
 var pokemonOpp;

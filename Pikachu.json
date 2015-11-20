@@ -9,9 +9,8 @@
       "Defense": 40,
       "SpAtk": 50,
       "SpDef": 50,
-      "Speed": 90,
       "Accuracy": 100,
-      "Evasion" : 100
+      "Evasion" : 100,
     },
     "Attacks": ["ThunderShock", "Thunder", "QuickAttack", "ThunderWave"]
 }

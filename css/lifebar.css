@@ -1,0 +1,10 @@
+#meter {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+#health {
+    background-color: #f00;
+    width: 0%;
+}

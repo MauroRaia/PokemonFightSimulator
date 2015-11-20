@@ -7,11 +7,16 @@
       "HpMax" : 70,
       "Attack":110,
       "Defense":80,
+<<<<<<< HEAD
       "SpAtk":55,
       "SpDef":80,
       "Speed":105,
+=======
+      "Sp.Atk":55,
+      "Sp.Def":80,
+>>>>>>> 4cdb707c7bc37faeabc285e4074e3d47fa96fed1
       "Accuracy": 100,
-      "Evasion" : 100
+      "Evasion" : 100,
     },
   "Attacks":["WingAttack", "Pursuit", "NightSlash", "QuickAttack"]
 }
