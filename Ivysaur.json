@@ -1,11 +1,13 @@
-{ "nombre" : "Ivysaur", "Lvl" : 1, "types" : "Grass", "stats" :
+{ "nombre" : "Ivysaur", "Lvl" : 1, "Type" : "Grass", "status":"None","stats" :
     {
     "Hp" : 60,
     "Attack" : 62,
     "Defense" : 63,
     "SpAtk" : 80,
     "SpDef" : 80,
-    "Speed" : 65
+    "Speed" : 65,
+    "Accuracy": 100,
+    "Evasion" : 100
     },
   "Attacks": ["LeafBlade", "PoisonPowder", "SleepPowder", "SolarBeam"]
 }
