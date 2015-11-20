@@ -10,7 +10,8 @@
       "SpDef": 50,
       "Speed": 90,
       "Accuracy": 100,
-      "Evasion" : 100
+      "Evasion" : 100,
+      "Status" : "none"
     },
     "Attacks": ["ThunderShock", "Thunder", "QuickAttack", "ThunderWave"]
 }

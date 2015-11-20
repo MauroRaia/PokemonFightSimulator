@@ -10,7 +10,8 @@
       "Sp.Def":80,
       "Speed":105,
       "Accuracy": 100,
-      "Evasion" : 100
+      "Evasion" : 100,
+      "Status" : "none"
     },
   "Attacks":["WingAttack", "Pursuit", "NightSlash", "QuickAttack"]
 }
