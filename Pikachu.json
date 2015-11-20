@@ -1,6 +1,6 @@
 {
     "nombre": "Pikachu",
-    "type" : "Electric",
+    "Type" : "Electric",
     "Lvl": 1,
     "stats" :
     { "Hp": 100,
@@ -8,7 +8,9 @@
       "Defense": 40,
       "SpAtk": 50,
       "SpDef": 50,
-      "Speed": 90
+      "Speed": 90,
+      "Accuracy": 100,
+      "Evasion" : 100
     },
     "Attacks": ["ThunderShock", "Thunder", "QuickAttack", "ThunderWave"]
 }
