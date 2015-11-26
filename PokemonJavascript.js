@@ -4,14 +4,14 @@ function loadJSON(filePath) {
   // Load json file;
   var json = loadTextFileAjaxSync(filePath, "application/json");
   // Parse json
-  return JSON.parse(json);
+  return JSON.parse(json)
 }
 
 // Load text with Ajax synchronously: takes path to file and optional MIME type
 function loadTextFileAjaxSync(filePath, mimeType)
 {
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.open("GET",filePath,false);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET",filePath,true);
   if (mimeType != null) {
     if (xmlhttp.overrideMimeType) {
       xmlhttp.overrideMimeType(mimeType);
@@ -93,12 +93,12 @@ function modifier(attack, defender){
   }
 function calcAcc(attack, attacker, defender){
   var p = ((attack.Accuracy * (attacker.stats.Accuracy / defender.stats.Evasion)) / 100)
-  console.log(attack);
-  console.log(attacker);
-  console.log(defender);
-  console.log(p);
-  console.log(attacker.stats.Accuracy);
-  console.log(defender.stats.Evasion);
+  //console.log(attack);
+  //console.log(attacker);
+  //console.log(defender);
+  //console.log(p);
+  //console.log(attacker.stats.Accuracy);
+  //console.log(defender.stats.Evasion);
 
   var random = Math.random()
   console.log(random);
@@ -164,8 +164,8 @@ function actAttacks(miPokemon, oppPokemon){
     //  fightdata.round += 1;
       hit(selectedAttack, pokemonPlayer, pokemonOpp);
       hit(selectedAttackOpp, pokemonOpp, pokemonPlayer);
-      $(".vida").html(pokemonPlayer.stats.Hp);
-      $(".vidaopp").html(pokemonOpp.stats.Hp);
+      //$(".vida").html(pokemonPlayer.stats.Hp);
+      //$(".vidaopp").html(pokemonOpp.stats.Hp);
       $(".selectedAttack").html(selectedAttack);
       $(".selectedAttackOpp").html(selectedAttackOpp);
       console.log("my life:");
