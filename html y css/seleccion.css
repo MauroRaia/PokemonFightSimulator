@@ -1,0 +1,21 @@
+td, tr, img  { padding: 0px; margin: 0px; border: none; }
+table { border-collapse: collapse; border:none;}
+
+#body {
+   width:90%;
+   margin:auto;
+   min-width:600px;
+   max-width:2000px;
+}
+				
+.imagenes {
+    width: 100px;
+    height: 120px;
+}
+
+.imagenes img {
+    float:left;
+    width: 100%;
+    height: auto;
+}
+

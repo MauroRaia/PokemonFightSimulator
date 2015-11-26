@@ -6,9 +6,5 @@
   "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Accuracy" : 70, "Type":"Flying", "Category":"Physical"},
   "ThunderShock": {"ID":6, "nombre": "Thunder Shock", "Dmg":40, "PP": 40, "Accuracy" : 100, "Type": "Electric", "Category":"Special", "Chance": 15, "Effect": "Paralyze"},
   "Thunder": {"ID":7, "nombre": "Thunder", "Dmg":110, "PP": 15, "Accuracy" : 70, "Type": "Electric", "Category":"Special"},
-  "NightSlash": {"ID":8, "nombre": "Night Slash", "Dmg":70, "PP": 15, "Accuracy" : 100, "Type": "Dark", "Category": "Physical"},
-  "ThunderWave": {"ID":9, "nombre": "Thunder Wave", "PP":20, "Accuracy" : 100, "Type": "Electric", "Category": "Status", "Chance": 100, "Effect": "Paralyze"},
-  "SandAttack": {"ID":10, "nombre": "Sand-Attack", "PP":15, "Accuracy" : 100, "Type": "Ground", "Category": "Status"},
-  "PoisonPowder": {"ID":11, "nombre": "Poison Powder", "PP":35, "Accuracy" : 75, "Type": "Poison", "Category": "Status"},
-  "SleepPowder": {"ID":12, "nombre": "Sleep Powder", "PP":15, "Accuracy" : 75  , "Type": "Grass", "Category": "Status", "Chance": 100, "Effect": "Sleep"}
+  "NightSlash": {"ID":8, "nombre": "Night Slash", "Dmg":70, "PP": 15, "Accuracy" : 100, "Type": "Dark", "Category": "Physical"}
 }

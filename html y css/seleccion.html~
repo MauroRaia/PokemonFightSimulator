@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="seleccion.css"/>
+</head>
+
+ <body id=body>
+
+<table border=1 width=100>
+
+<tr>
+  <td align=center colspan="4">    
+     <img src = "fondoarriba.png"> 
+  </td>
+</tr>
+
+<tr>
+ <td>
+  <img src = "fondoderecha.png">
+ </td>
+</tr>
+
+
+</table> 
+ 
+ 
+ 
+ 
+ 
+ 
+<table border=1 width=100>
+
+<tr>
+ <td align=center>
+  	<div class=imagenes>
+     <a href={{#}}><img src = "1.PNG"></a>
+     </div>
+  </td>
+  
+  <td align=center>
+  	<div class=imagenes>
+     <a href={{#}}><img src = "3.PNG"></a>
+   </div>
+   </td>
+   
+   <td align=center>
+  	<div class=imagenes>
+     <a href={{#}}><img src = "5.PNG"></a>
+   </div>
+  </td>
+   
+</tr>
+
+<tr>
+ <td align=center>
+   <div class=imagenes>
+   <a href={{#}}><img src = "2.PNG"></a>
+   </div>
+ </td>
+ <td align=center>
+  	<div class=imagenes>
+     <a href={{#}}><img src = "4.PNG"></a>
+   </div>
+   <td align=center>
+  	<div class=imagenes>
+     <a href={{#}}><img src = "6.PNG"></a>
+   </div>
+  </td>
+ </td>
+</tr>
+
+</table>
+</body>
+

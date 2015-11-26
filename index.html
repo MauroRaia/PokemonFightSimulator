@@ -2,14 +2,85 @@
 <script src="node_modules/underscore/underscore.js"></script>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="PokemonJavascript.js"></script>
+<link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
+
+
+<div>
+Vida mi pokemon
+<progress id="health" value=100 max="100"></progress>
+</div>
+<div>
+Vida Opp:
+<progress id="healthopp" value=100 max="100"></progress>
+</div>
+
+ <div id="wrapper">
+	<div id="header"><img src ="imagenes/fondoarriba.png"></div>
+	<div id="content">
+		<div id="content-left"><img src = "imagenes/fondoizquierda.png"></div>
+		<div id="content-main"> <table>
+
+<tr>
+ <td>
+     <div class="imagenes lifebarOpp">
+     <a href={{#}}><img src = "/imagenes/flechita.png" >
+     </a>
+     </div>
+  </td>
+
+  <td>
+  	<div class=imagenes><a href={{#}}><img src = "imagenes/blank.png"></a>
+
+   </div>
+   </td>
+
+   <td>
+  	<div class="imagenes pokemonOpp">
+     <a href={{#}}><img src ="" id="oppPokemon"></a>
+   </div>
+   </td>
+</tr>
+
+<tr>
+ <td>
+   <div class="imagenes pokemonMio">
+   <a href={{#}}><img src ="" id="miPokemon"></a>
+   </div>
+ </td>
+ <td >
+   <div class=imagenes><a href={{#}}><img src = "imagenes/blank.png"></a>
+   </div>
+ </td>
+ <td>
+  	<div class="imagenes lifebarMio">
+     <a href={{#}}><img src = "imagenes/flechita2.png"></a>
+   </div>
+  </td>
+ </tr>
+ <tr>
+    <td colspan="3">
+  	<div class="imagenes">
+		<a href={{#}}><img src = ></a>
+   </div>
+   </td>
+   </tr>
+</table>
+</div>
+		<div id="content-right"><img src = "imagenes/fondoderecha.png"></div>
+	</div>
+	<div id="bottom"><img src = "imagenes/fondoabajo.png"></div>
+</div>
+<br></br>
+<br></br>
   Mi pokemon <div class="miPokemon">-</div>
   Opp pokemon <div class="oppPokemon">-</div>
   Vida mi Pokemon: <div class="vida">0</div>
   Vida opp Pokemon: <div class="vidaopp">0</div>
   Ataque de mi pokemon seleccionado: <div class ="selectedAttack">-</div>
   Ataque del otro pokemon seleccionado: <div class ="selectedAttackOpp">-</div>
+
 
    <div class="ataques">
      <ul>

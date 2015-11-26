@@ -1,0 +1,37 @@
+#wrapper {
+		width:900px;
+		margin:0px auto;
+		border:1px solid #bbb;
+		padding:10px;
+	}
+
+#header {
+		border:none;
+		height:54px;
+		padding:0px;
+	}
+#content {
+		margin-top:0px;
+		padding-bottom:0px;
+	}
+#content div {	padding:0px;
+		border:1px solid #bbb1;
+		float:left;
+	}
+#content-left {
+		width:52px;
+	}
+#content-main {
+		margin-left:10px;
+		width:200px;
+	}
+#content-right {
+		margin-left:10px;
+		width:134px;
+	}
+
+#bottom {
+		clear:both;
+		text-align:right;
+	}
+
