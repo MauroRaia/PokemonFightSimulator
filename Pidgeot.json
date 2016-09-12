@@ -8,8 +8,7 @@
     "SpDef" : 70,
     "Speed" : 91,
     "Accuracy": 100,
-    "Evasion" : 100,
-    }
-  ,
+    "Evasion" : 100
+    },
   "Attacks": ["WingAttack", "Hurricane", "QuickAttack", "SandAttack"]
 }

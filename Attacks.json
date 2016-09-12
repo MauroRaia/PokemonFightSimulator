@@ -6,5 +6,5 @@
   "Hurricane": {"ID":5, "nombre":"Hurricane", "Dmg":110, "PP":10, "Accuracy" : 70, "Type":"Flying", "Category":"Physical"},
   "ThunderShock": {"ID":6, "nombre": "Thunder Shock", "Dmg":40, "PP": 40, "Accuracy" : 100, "Type": "Electric", "Category":"Special", "Chance": 15, "Effect": "Paralyze"},
   "Thunder": {"ID":7, "nombre": "Thunder", "Dmg":110, "PP": 15, "Accuracy" : 70, "Type": "Electric", "Category":"Special"},
-  "NightSlash": {"ID":8, "nombre": "Night Slash", "Dmg":70, "PP": 15, "Accuracy" : 100, "Type": "Dark", "Category": "Physical"},
+  "NightSlash": {"ID":8, "nombre": "Night Slash", "Dmg":70, "PP": 15, "Accuracy" : 100, "Type": "Dark", "Category": "Physical"}
 }

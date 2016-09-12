@@ -12,7 +12,7 @@
     "SpDef" : 80,
     "Speed" : 65,
     "Accuracy": 100,
-    "Evasion" : 100,
+    "Evasion" : 100
     },
   "Attacks": ["LeafBlade", "PoisonPowder", "SleepPowder", "SolarBeam"]
 }
